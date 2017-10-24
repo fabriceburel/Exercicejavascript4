@@ -5,11 +5,19 @@
     <title>exercicejavascript4</title>
   </head>
   <body>
+    <form>
+      <label for="name">Nom : </label><input type="text" name="nom" id="nom"/>
+      <label for="firstname">Prénom : </label><input type="text" name="prenom" id="prenom"/>
+      <label for="town">Ville : </label><input type="text" name="ville" id="ville"/>
+      <button  name="valider" id="valider">Valider</button>
+    </form>
     <script>
-      var name =  prompt('saisissez votre nom :');
-      var firstname = prompt('saisissez votre prénom :');
-      var town= prompt('saisissez votre ville :');
-      alert('Nom : ' + name + '\n Prénom : ' + firstname + '\n ville : ' + town);
+    document.getElementById('valider').addEventListener("click",function(){
+      var name = 'Nom :' + document.getElementById('nom').value;
+      var firstname = 'Prénom :' + document.getElementById('prenom').value;
+      var town  = 'ville :' + document.getElementById('ville').value;
+        alert(name + '\n' + firstname + '\n' + town);
+      })
     </script>
   </body>
 </html>
