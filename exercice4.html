@@ -12,11 +12,19 @@
       <button  name="valider" id="valider">Valider</button>
     </form>
     <script>
-    document.getElementById('valider').addEventListener("click",function(){
-      var name = 'Nom :' + document.getElementById('nom').value;
-      var firstname = 'Prénom :' + document.getElementById('prenom').value;
-      var town  = 'ville :' + document.getElementById('ville').value;
-        alert(name + '\n' + firstname + '\n' + town);
+      document.getElementById('valider').addEventListener("click",function(){
+        var name =  document.getElementById('nom').value;
+        var firstname = document.getElementById('prenom').value;
+        var town  =  document.getElementById('ville').value;
+        if (isNaN(name) == true && isNaN(firstname) == true && isNaN(town) == true && name && firstname && town){ //vérification que les données saisis sont bien des chaine de caractère
+          name = 'Nom :' + name;
+          firstname = 'Prénom :' + firstname;
+          town  = 'ville :' + town;
+          alert(name + '\n' + firstname + '\n' + town); //affichage du message dans une box
+        }
+        else{
+          alert('Veuillez vérifier votre saisis');
+        }
       })
     </script>
   </body>
